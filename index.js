@@ -102,7 +102,7 @@ rows.forEach((row, index) => {
     (revenueByMonthItem[month][sku] || 0) + totalPrice;
 });
 
-const popularStats = {};
+const popularItem = {};
 Object.keys(quantityByMonthItem).forEach((month) => {
   const items = quantityByMonthItem[month];
   let maxItem = null;
@@ -117,7 +117,7 @@ Object.keys(quantityByMonthItem).forEach((month) => {
     }
   }
 
-  popularStats[month] = {
+  popularItem[month] = {
     item: maxItem,
     min: Math.min(...quantities),
     max: Math.max(...quantities),
@@ -162,8 +162,8 @@ for (let i = 1; i < months.length; i++) {
 
 console.log("Total Sales:", totalSales);
 console.log("Monthly Sales:", monthlySales);
-console.log("Most Popular Items:", popularStats);
+console.log("Most Popular Items:", popularItem);
 console.log("Top Revenue Items:", topRevenueItems);
-console.log("Month-to-Month Growth (%):", growth);
+console.log("Month to Month Growth:", growth);
 console.log("Data Inconsistencies:", inconsistencies);
 
